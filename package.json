@@ -29,9 +29,7 @@
     "gulp-sourcemaps": "^3.0.0",
     "npm-run-all": "^4.1.5",
     "sass": "^1.43.4",
-    "webpack": "^5.62.1"
-  },
-  "dependencies": {
+    "webpack": "^5.62.1",
     "json-server": "^0.17.0"
   }
 }
