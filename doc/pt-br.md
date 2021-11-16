@@ -33,14 +33,14 @@ Estamos procurando Desenvolvedores(as) `Front-end`, com sólidos conhecimentos e
 
 ## Como se candidatar a vaga
 
-- [Crie um fork desse projeto;](https://github.com/agenciam3/Desenvolvedor-M3/fork)
+- [Crie um fork desse projeto;](https://github.com/M3-Ecommerce/Challenge-m3/fork)
 - No seu fork, codifique o layout seguindo as instruções abaixo;
 - Atualize o readme com as instruções necessárias para rodar o seu código;
 - Adicione também seu e-mail de contato ao readme do projeto ( caso seu e-mail do github esteja privado )
 - Faça um pull request (ou envie para [heraldo@digitalm3.com.br](mailto:heraldo@digitalm3.com.br?subject=Vaga%20DEV%20-%20Digital%20M3)
 
 
-**obs.**: link do projeto [github.com/agenciam3/Desenvolvedor-M3](https://github.com/agenciam3/Desenvolvedor-M3)
+**obs.**: link do projeto [https://github.com/M3-Ecommerce/Challenge-m3](https://github.com/agenciam3/Desenvolvedor-M3)
 
 ### Instruções para o teste
 
