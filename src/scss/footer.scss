@@ -1,0 +1,15 @@
+footer {
+    margin-top: 51px;
+  .footer-container {
+    background-color: $color-primary;
+    height: 33px;
+display: flex;
+justify-content: center;
+align-items: center;
+    span {
+      color: $secondary-color;
+      font-size: 14px;
+      text-transform: uppercase;
+    }
+  }
+}

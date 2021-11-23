@@ -1,0 +1,13 @@
+header {
+    border-bottom: 2px solid $fifth-color;
+    .header-container {
+      width: 85.6%;
+      margin: 16.5px auto;
+      display: flex;
+      justify-content: space-between;
+      div {
+        align-self: center;
+      }
+    }
+  }
+  

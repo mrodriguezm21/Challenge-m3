@@ -1,19 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Desenvolvedor M3</title>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Desenvolvedor M3</title>
-  <link rel="stylesheet" href="main.css" />
-</head>
-
-<body>
-
-</body>
-<h1>Desafio m3</h1>
-
-<script src="bundle.js"></script>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <div><img src="./img/logo-m3.png" alt="" /></div>
+        <div><img src="./img/shop-bag.png" alt="" /></div>
+      </div>
+    </header>
+    <main>
+      <div id="filter-container-desktop">
+        <h1>Blusas</h1>
+        <div class="colors">
+          <div class="filter-title-container">
+            <h2>Cores</h2>
+            <img src="/img/vector.png" alt="" />
+          </div>
+          <ul>
+            <li>
+              <input id="amarelo" type="checkbox" name="color" /><label
+                for="amarelo"
+                class="checkbox-option"
+                >amarelo</label
+              >
+            </li>
+            <li>
+              <input id="azul" type="checkbox" name="color" /><label
+                for="azul"
+                class="checkbox-option"
+                >azul</label
+              >
+            </li>
+            <li>
+              <input id="branco" type="checkbox" name="color" /><label
+                for="branco"
+                class="checkbox-option"
+                >branco</label
+              >
+            </li>
+            <li>
+              <input id="cinza" type="checkbox" name="color" /><label
+                for="cinza"
+                class="checkbox-option"
+                >cinza</label
+              >
+            </li>
+            <li>
+              <input id="laranja" type="checkbox" name="color" /><label
+                for="laranja"
+                class="checkbox-option"
+                >laranja</label
+              >
+            </li>
+          </ul>
+          <div class="expand-colors">
+            <span>Ver todas as cores <img src="/img/vector.png" alt="" /></span>
+          </div>
+          <ul class="expand-colors-ul">
+            <li>
+              <input id="verde" type="checkbox" name="color" /><label
+                for="verde"
+                class="checkbox-option"
+                >verde</label
+              >
+            </li>
+            <li>
+              <input id="vermelho" type="checkbox" name="color" /><label
+                for="vermelho"
+                class="checkbox-option"
+                >vermelho</label
+              >
+            </li>
+            <li>
+              <input id="preto" type="checkbox" name="color" /><label
+                for="preto"
+                class="checkbox-option"
+                >preto</label
+              >
+            </li>
+            <li>
+              <input id="rosa" type="checkbox" name="color" /><label
+                for="rosa"
+                class="checkbox-option"
+                >rosa</label
+              >
+            </li>
+            <li>
+              <input id="vinho" type="checkbox" name="color" /><label
+                for="vinho"
+                class="checkbox-option"
+                >vinho</label
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="sizes">
+          <div class="filter-title-container">
+            <h2>TAMANHOS</h2>
+            <img src="/img/vector.png" alt="" />
+          </div>
+          <ul>
+            <li><button class="button-size">P</button></li>
+            <li><button class="button-size">M</button></li>
+            <li><button class="button-size">G</button></li>
+            <li><button class="button-size">GG</button></li>
+            <li><button class="button-size">U</button></li>
+            <li><button class="button-size">36</button></li>
+            <li><button class="button-size">38</button></li>
+            <li><button class="button-size">40</button></li>
+            <li><button class="button-size">36</button></li>
+            <li><button class="button-size">38</button></li>
+            <li><button class="button-size">40</button></li>
+          </ul>
+        </div>
+        <div class="price-range">
+          <div class="filter-title-container">
+            <h2>Faixa de Preço</h2>
+            <img src="/img/vector.png" alt="" />
+          </div>
+          <ul class="p-container">
+            <li class="price-container">
+              <input type="checkbox" id="from0-50" /><label for="from0-50"
+                >de R$0 até R$50</label
+              >
+            </li>
+            <li class="price-container">
+              <input type="checkbox" id="from51-150" /><label for="from51-150"
+                >de R$51 até R$150</label
+              >
+            </li>
+            <li class="price-container">
+              <input type="checkbox" id="from151-300" /><label for="from151-300"
+                >de R$151 até R$300</label
+              >
+            </li>
+            <li class="price-container">
+              <input type="checkbox" id="from301-500" /><label for="from301-500"
+                >de R$301 até R$500</label
+              >
+            </li>
+            <li class="price-container">
+              <input type="checkbox" id="higher500" /><label for="higher500"
+                >a partir de R$ 500</label
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div id="filter-container-mobile">
+        <div><span>Filtrar</span></div>
+        <div><span>Ordenar</span></div>
+      </div>
+      <div id="items-container">
+        <div class="producto">
+          <div class="product-image">
+            <img src="./img/img_2.png" alt="" />
+          </div>
+          <span class="product-name">Camiseta Mescla</span>
+          <span class="product-price">R$ 28,00</span>
+          <span class="product-quotas">até 3x de R$9,33</span>
+          <button class="button product-button">COMPRAR</button>
+        </div>
+        <div class="producto">
+          <div class="product-image">
+            <img src="./img/img_3.png" alt="" />
+          </div>
+          <span class="product-name">Saia em couro</span>
+          <span class="product-price">R$ 398,00</span>
+          <span class="product-quotas">até 10x de R$39,80</span>
+          <button class="button product-button">COMPRAR</button>
+        </div>
+        <div class="producto">
+          <div class="product-image">
+            <img src="./img/img_2.png" alt="" />
+          </div>
+          <span class="product-name">Camiseta Mescla</span>
+          <span class="product-price">R$ 28,00</span>
+          <span class="product-quotas">até 3x de R$9,33</span>
+          <button class="button product-button">COMPRAR</button>
+        </div>
+        <div class="producto">
+          <div class="product-image">
+            <img src="./img/img_3.png" alt="" />
+          </div>
+          <span class="product-name">Saia em couro</span>
+          <span class="product-price">R$ 398,00</span>
+          <span class="product-quotas">até 10x de R$39,80</span>
+          <button class="button product-button">COMPRAR</button>
+        </div>
+      </div>
+      <select name="" id="prueba">
+        <option value="ordenar" hidden>Ordenar por:</option>
+        <option value="">Mas recentes</option>
+        <option value="">Menor preço</option>
+        <option value="">Maior preço</option>
+      </select>
+      <button class="button seeMore-button">CARREGAR MAIS</button>
+    </main>
+    <footer>
+      <div class="footer-container">
+        <span>M3: Implantação de E-commerce VTEX</span>
+      </div>
+    </footer>
+    <script src="bundle.js"></script>
+  </body>
 
 </html>
