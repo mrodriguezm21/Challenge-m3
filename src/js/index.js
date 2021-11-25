@@ -46,7 +46,7 @@ if (window.matchMedia("(max-width: 768px)").matches) {
     colorUl.classList.toggle("is-active");
     colorUl2.classList.toggle("is-active");
   });
-  
+
   sizeMenu.firstElementChild.addEventListener("click", () => {
     sizeUl.classList.toggle("is-activeG");
   });
@@ -61,39 +61,41 @@ if (window.matchMedia("(max-width: 768px)").matches) {
 
 //Get the elements from DOM
 let productContainer = document.getElementById("items-container");
+
+
 let seeMoreButton = document.getElementById("see-more");
 
 // Get products
 function getProducts(amount) {
   fetch("http://localhost:5000/products")
-    .then((response) => {
-      return response.json();
-    })
-    .then((data) => {
-      let slicedArray = data.slice(0, amount);
-      slicedArray.forEach((element) => {
-        let { id, name, price, image, parcelamento } = element;
-        if (!nonRepeat(id)) {
-          productContainer.innerHTML += `
-          <div class="producto" id="producto-${id}">
-          <div class="product-image">
-          <img src=${image} alt="" />
-          </div>
-          <span class="product-name">${name}</span>
-          <span class="product-price">R$ ${price}</span>
-          <span class="product-quotas">até ${parcelamento[0]}x de R$${parcelamento[1]}</span>
-          <button class="button product-button">COMPRAR</button>
-          </div>`;
-        }
-      });
-    })
-    .catch((error) => {
-      console.log(error);
+  .then((response) => {
+    return response.json();
+  })
+  .then((data) => {
+    let slicedArray = data.slice(0, amount);
+    slicedArray.forEach((element) => {
+      let { id, name, price, image, parcelamento } = element;
+      if (!nonRepeat(id)) {
+        productContainer.innerHTML += `
+        <div class="producto" id="producto-${id}">
+        <div class="product-image">
+        <img src=${image} alt="" />
+        </div>
+        <span class="product-name">${name}</span>
+        <span class="product-price">R$ ${price}</span>
+        <span class="product-quotas">até ${parcelamento[0]}x de R$${parcelamento[1]}</span>
+        <button class="button product-button")">COMPRAR</button>
+        </div>`;
+      }
     });
+  })
+  .catch((error) => {
+    console.log(error);
+  });
 }
 
 // Get products media querie
-const product = () => {
+const productMedia = () => {
   if (window.matchMedia("(max-width: 768px)").matches) {
     getProducts(4);
     return null;
@@ -109,4 +111,29 @@ seeMoreButton.addEventListener("click", () => {
 });
 
 // Run the function
-product();
+productMedia();
+
+/* Add item to cart */
+
+//Get the elements from DOM
+let cart = document.getElementById("counter-items");
+// initialize variables
+let itemCart = [];
+let counter = 1;
+
+productContainer.addEventListener("click", (e) => {
+  if (e.target.classList.contains("product-button")) {
+    let id = e.target.parentElement.id;
+    let productId = id.split("-")[1];
+    let productCheck = itemCart.find((product) => product == productId);
+    if (productCheck) {
+      console.log("El item ya esta agregado al carrito");
+      return null;
+    } else {
+      itemCart.push(productId);
+      sessionStorage.setItem("cart", itemCart);
+      cart.style.display = "flex";
+      cart.innerHTML = counter++;
+    }
+  }
+});

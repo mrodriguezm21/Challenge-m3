@@ -1,25 +1,38 @@
 header {
-    border-bottom: 2px solid $fifth-color;
-    .header-container {
-      width: 85.6%;
-      margin: 16.5px auto;
-      display: flex;
-      justify-content: space-between;
-      div {
-        align-self: center;
-      }
-      .hidden{
+  border-bottom: 2px solid $fifth-color;
+  .header-container {
+    width: 85.6%;
+    margin: 16.5px auto;
+    display: flex;
+    justify-content: space-between;
+    div {
+      position: relative;
+      align-self: center;
+      #counter-items {
         display: none;
+        color: white;
+        background-color: $fourth-color;
+        border-radius: 16px;
+        width: 16px;
+        height: 16px;
+        font-size: 12px;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 10px;
+        left: 8px;
       }
-      h2{
-        text-transform: uppercase;
-        font-size: 28px;
-        color: $tertiary-color;
-      }
-      #x{
-        font-size: 28px;
-      }
-
+    }
+    .hidden {
+      display: none;
+    }
+    h2 {
+      text-transform: uppercase;
+      font-size: 28px;
+      color: $tertiary-color;
+    }
+    #x {
+      font-size: 28px;
     }
   }
-  
+}
