@@ -11,19 +11,22 @@
   <body>
     <header>
       <div class="header-container">
-        <div><img src="./img/logo-m3.png" alt="" /></div>
-        <div><img src="./img/shop-bag.png" alt="" /></div>
+        <div id="logo"><img src="./img/logo-m3.png" alt="" /></div>
+        <div id="bag-icon"><img src="./img/shop-bag.png" alt="" /></div>
+        <div id="filt-header" class="hidden"><h2>FILTRAR</h2></div>
+        <div class="hidden"><h2>ORDENAR</h2></div>
+        <div id="x" class="hidden">✕</div>
       </div>
     </header>
     <main>
       <div id="filter-container-desktop">
-        <h1>Blusas</h1>
+        <h1 id="category-title">Blusas</h1>
         <div class="colors">
           <div class="filter-title-container">
             <h2>Cores</h2>
             <img src="/img/vector.png" alt="" />
           </div>
-          <ul>
+          <ul class="color-ul">
             <li>
               <input id="amarelo" type="checkbox" name="color" /><label
                 for="amarelo"
@@ -106,7 +109,7 @@
             <h2>TAMANHOS</h2>
             <img src="/img/vector.png" alt="" />
           </div>
-          <ul>
+          <ul class="size-ul">
             <li><button class="button-size">P</button></li>
             <li><button class="button-size">M</button></li>
             <li><button class="button-size">G</button></li>
@@ -155,7 +158,7 @@
         </div>
       </div>
       <div id="filter-container-mobile">
-        <div><span>Filtrar</span></div>
+        <div id="filter-button"><span>Filtrar</span></div>
         <div><span>Ordenar</span></div>
       </div>
       <div id="items-container">
@@ -196,13 +199,13 @@
           <button class="button product-button">COMPRAR</button>
         </div> -->
       </div>
-      <select name="" id="prueba">
+      <select name="" id="select">
         <option value="ordenar" hidden>Ordenar por:</option>
         <option value="">Mas recentes</option>
         <option value="">Menor preço</option>
         <option value="">Maior preço</option>
       </select>
-      <button class="button seeMore-button">CARREGAR MAIS</button>
+      <button class="button seeMore-button" id="see-more">CARREGAR MAIS</button>
     </main>
     <footer>
       <div class="footer-container">
@@ -211,5 +214,4 @@
     </footer>
     <script src="./bundle.js"></script>
   </body>
-
 </html>

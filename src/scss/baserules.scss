@@ -1,4 +1,19 @@
-html{
-    font-family: $font;
-    font-weight: 400;
+html {
+  font-family: $font;
+  font-weight: 400;
+}
+.is-active {
+  display: block !important;
+}
+.is-activeG {
+  display: grid !important;
+}
+
+#select {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  #select {
+    display: block;
+  }
 }

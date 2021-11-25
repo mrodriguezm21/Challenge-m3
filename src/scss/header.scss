@@ -8,6 +8,18 @@ header {
       div {
         align-self: center;
       }
+      .hidden{
+        display: none;
+      }
+      h2{
+        text-transform: uppercase;
+        font-size: 28px;
+        color: $tertiary-color;
+      }
+      #x{
+        font-size: 28px;
+      }
+
     }
   }
   
