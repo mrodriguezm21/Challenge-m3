@@ -25,7 +25,6 @@ let h1Filter = document.getElementById("filt-header");
 let xButton = document.getElementById("x");
 let bagIcon = document.getElementById("bag-icon");
 let logo = document.getElementById("logo");
-
 filterButton.addEventListener("click", () => {
   categoryTitle.style.display = "none";
   logo.style.display = "none";
@@ -42,17 +41,19 @@ xButton.addEventListener("click", () => {
   h1Filter.classList.toggle("is-active");
   xButton.classList.toggle("is-active");
 });
-colorMenu.addEventListener("click", () => {
-  colorUl.classList.toggle("is-active");
-  colorUl2.classList.toggle("is-active");
-});
-
-sizeMenu.addEventListener("click", () => {
-  sizeUl.classList.toggle("is-activeG");
-});
-priceMenu.addEventListener("click", () => {
-  priceUl.classList.toggle("is-active");
-});
+if (window.matchMedia("(max-width: 768px)").matches) {
+  colorMenu.firstElementChild.addEventListener("click", () => {
+    colorUl.classList.toggle("is-active");
+    colorUl2.classList.toggle("is-active");
+  });
+  
+  sizeMenu.firstElementChild.addEventListener("click", () => {
+    sizeUl.classList.toggle("is-activeG");
+  });
+  priceMenu.firstElementChild.addEventListener("click", () => {
+    priceUl.classList.toggle("is-active");
+  });
+}
 
 /* Sort menu mobile */
 
