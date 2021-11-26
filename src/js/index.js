@@ -57,57 +57,78 @@ if (window.matchMedia("(max-width: 768px)").matches) {
 
 /* Sort menu mobile */
 
+/* Filter by size */
+
+sizeUl.addEventListener("click", (e) => {
+  let target = e.target;
+  let filterValue;
+  if (target.tagName === "INPUT") {
+    filterValue = document.querySelector('input[name="sizeB"]:checked').value;
+  }
+  getProducts({ sizeV: filterValue });
+});
+
 /* Get the elements from API */
 
 //Get the elements from DOM
 let productContainer = document.getElementById("items-container");
 
-
 let seeMoreButton = document.getElementById("see-more");
 
 // Get products
-function getProducts(amount) {
+function getProducts({ amount, sizeV }) {
   fetch("http://localhost:5000/products")
-  .then((response) => {
-    return response.json();
-  })
-  .then((data) => {
-    let slicedArray = data.slice(0, amount);
-    slicedArray.forEach((element) => {
-      let { id, name, price, image, parcelamento } = element;
-      if (!nonRepeat(id)) {
-        productContainer.innerHTML += `
-        <div class="producto" id="producto-${id}">
-        <div class="product-image">
-        <img src=${image} alt="" />
-        </div>
-        <span class="product-name">${name}</span>
-        <span class="product-price">R$ ${price}</span>
-        <span class="product-quotas">até ${parcelamento[0]}x de R$${parcelamento[1]}</span>
-        <button class="button product-button")">COMPRAR</button>
-        </div>`;
-      }
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      let slicedArray = data.slice(0, amount);
+      slicedArray.forEach((element) => {
+        let { id, name, price, image, parcelamento, size } = element;
+        if (sizeV) {
+          if (!nonRepeat(id) && size.includes(sizeV)) {
+            printProducts({ id, name, price, image, parcelamento });
+          }
+          return false;
+        } else {
+          if (!nonRepeat(id)) {
+            printProducts({ id, name, price, image, parcelamento });
+          }
+        }
+      });
+    })
+    .catch((error) => {
+      console.log(error);
     });
-  })
-  .catch((error) => {
-    console.log(error);
-  });
 }
+
+const printProducts = ({ id, name, price, image, parcelamento }) => {
+  productContainer.innerHTML += `
+  <div class="producto" id="producto-${id}">
+  <div class="product-image">
+  <img src=${image} alt="" />
+  </div>
+  <span class="product-name">${name}</span>
+  <span class="product-price">R$ ${price}</span>
+  <span class="product-quotas">até ${parcelamento[0]}x de R$${parcelamento[1]}</span>
+  <button class="button product-button")">COMPRAR</button>
+  </div>`;
+};
 
 // Get products media querie
 const productMedia = () => {
   if (window.matchMedia("(max-width: 768px)").matches) {
-    getProducts(4);
+    getProducts({ amount: 4 });
     return null;
   } else {
-    getProducts();
+    getProducts({ amount: 9 });
   }
 };
 // Get more products (for mobile)
 seeMoreButton.addEventListener("click", () => {
   productContainer.innerHTML = "";
   noRepeat = [];
-  getProducts(9);
+  getProducts({ amount: 9 });
 });
 
 // Run the function

@@ -76,6 +76,13 @@ main {
         display: none;
         gap: 8px;
         grid-template-columns: repeat(4, 1fr);
+        input{
+          display: none;
+        }
+        input[type="radio"]:checked + label {
+          color: $color-primary;
+          border-color: $fourth-color;
+        }
         .button-size {
           background-color: $secondary-color;
           border: 1px solid rgba($color: $color-primary, $alpha: 0.5);
